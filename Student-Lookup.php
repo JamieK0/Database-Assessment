@@ -154,39 +154,52 @@
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-form u-form-1">
 
-
+        <div style="max-width: 300px;">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-          Name: <input type="text" name="name" value="<?php echo $name; ?>">
+        <div class="u-form-group u-form-partition-factor-2 u-form-group-7">
+          Name: <input class="u-input u-input-rectangle" type="text" name="name" value="<?php echo $name; ?>">
           <span class="error">* <?php echo $nameErr; ?></span>
-        </form>
+        </div>
+      </form>
+      </div>
 
-        <form action="search.php" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" method="POST"
-          source="email" name="form" style="padding: 10px;">
-          <div class="u-form-email u-form-group u-label-top">
-            <label for="email-c42a" class="u-label">Student Search</label>
-            <input type="email" placeholder="Enter Name" id="email-c42a" name="search"
-              class="u-input u-input-rectangle">
-          </div>
+
+        <form class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" method="post"
+          source="text" name="name" style="padding: 10px;">
+
+          <div class="u-form-group u-form-partition-factor-2 u-form-group-7">
+                  <label for="text-d46f" class="u-label">Student Name</label>
+                  <input type="text" placeholder="" id="text-d46f" name="name" class="u-input u-input-rectangle">
+                </div>
+
           <div class="u-align-center u-form-group u-form-submit u-label-top">
             <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
             <input type="submit" value="submit" class="u-form-control-hidden">
           </div>
-          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try
-            again. </div>
-          <input type="hidden" value="" name="recaptchaResponse">
         </form>
       </div>
     </div>
   </section>
   <section class="u-align-center u-clearfix u-section-2" id="sec-9c5e">
-    <p><?php 
-    $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info");
-                      while ($row = mysqli_fetch_array($studentInfo)) {
-                        echo $row['First_Name'];
-                      }
 
-                      ?></p>
+    <p style="text-align:left;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;">
+      <?php
+      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '$_POST[name]'");
+      while ($row = mysqli_fetch_array($studentInfo)) {
+        echo $row['First_Name'];
+        echo " ";
+        echo $row['Last_Name'];
+        echo "<br>";
+        echo $row['DOB'];
+      } 
+      // Todo, For each row, echo a table with the first name last name and pciture of student, along iwth a button to choose this student IF query rows > 1.
+
+      ?>
+    </p>
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
       <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
         <ul class="u-border-2 u-border-palette-1-base u-spacing-10 u-tab-list u-unstyled" role="tablist">
@@ -216,6 +229,7 @@
             <div class="u-container-layout u-valign-top u-container-layout-1">
               <h4 class="u-text u-text-default u-text-1">Basic Settings</h4>
               <div class="u-expanded-width u-table u-table-responsive u-table-1">
+
                 <table class="u-table-entity">
                   <colgroup>
                     <col width="25%">
@@ -225,13 +239,7 @@
                   </colgroup>
                   <tbody class="u-table-alt-grey-5 u-table-body">
                     <tr style="height: 51px;">
-                      <td class="u-table-cell"><?php 
-                      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name='$_POST[name]'");
-                      while ($row = mysqli_fetch_array($studentInfo)) {
-                        echo $row['First_Name'];
-                      }
-
-                      ?></td>
+                      <td class="u-table-cell">Column 1</td>
                       <td class="u-table-cell">Column 2</td>
                       <td class="u-table-cell">Column 3</td>
                       <td class="u-table-cell">Column 4</td>
