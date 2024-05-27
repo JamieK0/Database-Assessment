@@ -6,8 +6,7 @@
   header("Pragma: no-cache"); //HTTP 1.0
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
-$con=mysqli_connect("", 'root', 'root', "YR122024");
-//The code above puts the database credentials into a variable called $con
+$con=mysqli_connect("", 'root', 'root', "YR122024"); //The code above puts the database credentials into a variable called $con
 
 if (mysqli_connect_errno()) {
 throw new RuntimeException('mysqli connection error: '. mysqli_connect_error());
@@ -20,15 +19,7 @@ throw new RuntimeException('mysqli error: ' . mysqli_error($con));
 }
 
 
-$result = mysqli_query($con, "SELECT * FROM Student_Info");
-
-$result = mysqli_query($con, "SELECT * FROM Student_Info");
-//The above code where it says "Select... etc." is SQL. Know this for the HSC!!!
-// The above code will look for specific data from a table in your database.
-//eg. SELECT (put in the column names... or * for all column names) FROM (Table name)
-// optional: WHERE (search criteria... eg. first_name = "John" / field from the form
-// of your web page.
-
+$result = mysqli_query($con, "SELECT * FROM Student_Info"); //This is needed for the HSC exam
 
 while($row = mysqli_fetch_array($result))
 {
