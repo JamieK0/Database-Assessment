@@ -188,7 +188,9 @@
     padding-bottom: 50px;
     padding-left: 80px;">
       <?php
-      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '$_POST[name]'");
+      $postName = $_POST["name"];
+      echo $postName;
+      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%'");
       while ($row = mysqli_fetch_array($studentInfo)) {
         echo $row['First_Name'];
         echo " ";
