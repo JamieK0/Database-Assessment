@@ -180,6 +180,13 @@
     </div>
   </section>
   <section class="u-align-center u-clearfix u-section-2" id="sec-9c5e">
+    <p><?php 
+    $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info");
+                      while ($row = mysqli_fetch_array($studentInfo)) {
+                        echo $row['First_Name'];
+                      }
+
+                      ?></p>
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
       <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
         <ul class="u-border-2 u-border-palette-1-base u-spacing-10 u-tab-list u-unstyled" role="tablist">
@@ -218,12 +225,13 @@
                   </colgroup>
                   <tbody class="u-table-alt-grey-5 u-table-body">
                     <tr style="height: 51px;">
-                      <td class="u-table-cell"><p><?php mysqli_query($con, "SELECT * FROM Student_Info");
-                      while ($row = mysqli_fetch_array($result)) {
+                      <td class="u-table-cell"><?php 
+                      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name='$_POST[name]'");
+                      while ($row = mysqli_fetch_array($studentInfo)) {
                         echo $row['First_Name'];
                       }
 
-                      ?></p></td>
+                      ?></td>
                       <td class="u-table-cell">Column 2</td>
                       <td class="u-table-cell">Column 3</td>
                       <td class="u-table-cell">Column 4</td>
