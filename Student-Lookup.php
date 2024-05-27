@@ -157,41 +157,33 @@
         </div>
     </header>
     <section class="u-clearfix u-section-1" id="sec-c34f">
+
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-form u-form-1">
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    <div class="u-form-group u-form-partition-factor-2 u-form-group-7">
-                        Name: <input class="u-input u-input-rectangle" type="text" name="name"
-                            value="<?php echo $name; ?>">
-                        <span class="error">* <?php echo $nameErr; ?></span>
-                        <form action="https://forms.nicepagesrv.com/v2/form/process"
-                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form"
+
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+                        method="post"
+                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="text" name="form"
                             style="padding: 10px;">
                             <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-1">
-                                <label for="text-f559" class="u-label">First Name</label>
-                                <input type="text" placeholder="" id="text-f559" name="FirstName"
-                                    class="u-input u-input-rectangle">
+                            Name: <input class="u-input u-input-rectangle" type="text" name="name"
+                            value="<?php echo $name; ?>">
+                        <span class="error">* <?php echo $nameErr; ?></span>
                             </div>
                             <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-2">
-                                <label for="text-a6d1" class="u-label">Last Name</label>
-                                <input type="text" placeholder="" id="text-a6d1" name="LastName"
-                                    class="u-input u-input-rectangle">
+                           Last Name: <input class="u-input u-input-rectangle" type="text" name="LastName"
+                            value="<?php echo $LastName; ?>">
+                        <span class="error">* <?php echo $LastNameErr; ?></span>
                             </div>
                             <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-3">
-                                <label for="text-3d77" class="u-label">Student Number</label>
-                                <input type="text" placeholder="" id="text-3d77" name="StudentNumber"
-                                    class="u-input u-input-rectangle">
+                            Student Number: <input class="u-input u-input-rectangle" type="text" name="StudentNumber"
+                            value="<?php echo $StudentNumber; ?>">
+                        <span class="error">* <?php echo $StudentNumberErr; ?></span>
                             </div>
                             <div class="u-align-center u-form-group u-form-submit u-label-top">
-                                <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-                                <input type="submit" value="submit" class="u-form-control-hidden">
+                                <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
                             </div>
-                            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent.
-                            </div>
-                            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix
-                                errors
-                                then try
-                                again. </div>
+ 
                             <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                     </div>
