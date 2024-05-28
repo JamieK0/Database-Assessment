@@ -157,19 +157,9 @@
         </div>
     </header>
     <section class="u-clearfix u-section-1" id="sec-c34f">
-
-
-
-
-
-
-
+        <div style="padding: 40px 100px;">
+        </div>
         <div class="u-clearfix u-sheet u-sheet-1">
-
-
-
-
-
                         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                         <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px;">
                             <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-1">
