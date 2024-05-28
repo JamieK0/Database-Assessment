@@ -201,7 +201,7 @@
       // Todo, For each row, echo a table with the first name last name and pciture of student, along iwth a button to choose this student IF query rows > 1.
       
       ?>
-      <img src="/images/default-logo.png"/>
+      <img src="images/<?php echo $showimage; ?>"/>
     </p>
     </section>
     <section class="u-align-center u-clearfix u-section-3" id="sec-9c5e">
