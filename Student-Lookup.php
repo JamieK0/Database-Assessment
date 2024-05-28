@@ -159,28 +159,17 @@
     <section class="u-clearfix u-section-1" id="sec-c34f">
         <div style="padding: 40px 100px;">
         </div>
-        <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="">
                         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px;">
+                        <div style="padding: 0 550px;">
                             <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-1">
-                            Name: <input class="u-input u-input-rectangle" type="text" name="name"
+                            Search: <input class="u-input u-input-rectangle" type="text" name="name" placeholder="Enter first name, last name or student number"
                             value="<?php echo $name; ?>">
-                        <span class="error">* <?php echo $nameErr; ?></span>
                             </div>
-                            <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-2">
-                           Last Name: <input class="u-input u-input-rectangle" type="text" name="LastName"
-                            value="<?php echo $LastName; ?>">
-                        <span class="error">* <?php echo $LastNameErr; ?></span>
-                            </div>
-                            <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-3">
-                            Student Number: <input class="u-input u-input-rectangle" type="text" name="StudentNumber"
-                            value="<?php echo $StudentNumber; ?>">
-                        <span class="error">* <?php echo $StudentNumberErr; ?></span>
-                            </div>
+
                             <div class="u-align-center u-form-group u-form-submit u-label-top">
                                 <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
                             </div>
- 
                             <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                     </div>
@@ -195,18 +184,24 @@
     padding-left: 80px;">
       <?php
       $postName = $_POST["name"];
-      echo $postName;
-      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%'");
+      echo $postName; //Debug
+      echo "<br>"; //Debug
+      $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%' OR Last_Name LIKE '%$postName%' OR Student_Number LIKE '%$postName%' ");
       while ($row = mysqli_fetch_array($studentInfo)) {
+        $showimage = $row['Image'];
         echo $row['First_Name'];
         echo " ";
         echo $row['Last_Name'];
         echo "<br>";
         echo $row['DOB'];
-      } 
+        echo '<br>';
+        echo $row['Student_Number'];
+        echo "<br>";        
+      }       
       // Todo, For each row, echo a table with the first name last name and pciture of student, along iwth a button to choose this student IF query rows > 1.
-
+      
       ?>
+      <img src="/images/default-logo.png"/>
     </p>
     </section>
     <section class="u-align-center u-clearfix u-section-3" id="sec-9c5e">
