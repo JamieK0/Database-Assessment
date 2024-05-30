@@ -193,8 +193,9 @@
                 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
                 <html>
                 <img src="images/';
-                echo $showimage;
-                echo '" width="146" height="220"" />
+                echo $row['First_Name'];
+                echo $row['Last_Name'];
+                echo '.jpg " width="146" height="220"" />
                 </html> ';
                 echo '<br>';
                 echo $row['First_Name'];
