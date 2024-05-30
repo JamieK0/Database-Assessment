@@ -189,6 +189,14 @@
             $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%' OR Last_Name LIKE '%$postName%' OR Student_Number LIKE '%$postName%' ");
             while ($row = mysqli_fetch_array($studentInfo)) {
                 $showimage = $row['Image'];
+                echo ' 
+                <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+                <html>
+                <img src="images/';
+                echo $showimage;
+                echo '" width="146" height="220"" />
+                </html> ';
+                echo '<br>';
                 echo $row['First_Name'];
                 echo " ";
                 echo $row['Last_Name'];
@@ -197,18 +205,10 @@
                 echo '<br>';
                 echo $row['Student_Number'];
                 echo "<br>";
-                echo ' 
-                <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-                <html>
-                <img src="images/JamieKyriacou.jpg" width="" height="" title="Logo of a company" alt="Logo of a company" />
-                </html> 
-            ';
-
             }
             // Todo, For each row, echo a table with the first name last name and pciture of student, along iwth a button to choose this student IF query rows > 1.
             
             ?>
-            <img src="images/<?php echo $showimage; ?>" />
         </p>
     </section>
     <section class="u-align-center u-clearfix u-section-3" id="sec-9c5e">
