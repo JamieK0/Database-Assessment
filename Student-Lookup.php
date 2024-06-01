@@ -175,18 +175,19 @@
         </div>
         </div>
     </section>
-    <section class="u-align-center u-clearfix u-section-2" id="sec-c0b9">
         <div class="u-clearfix u-sheet u-sheet-1"></div>
         <p style="text-align:left;
     padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 50px;
     padding-left: 80px;">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <?php
             $postName = $_POST["name"];
             echo $postName; //Debug
             echo "<br>"; //Debug
             $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%' OR Last_Name LIKE '%$postName%' OR Student_Number LIKE '%$postName%' ");
+            
             while ($row = mysqli_fetch_array($studentInfo)) {
                 $showimage = $row['Image'];
                 echo ' 
@@ -195,8 +196,7 @@
                 <img src="images/';
                 echo $row['First_Name'];
                 echo $row['Last_Name'];
-                echo '.jpg " width="146" height="220"" />
-                </html> ';
+                echo '.jpg " width="146" height="220"" />';
                 echo '<br>';
                 echo $row['First_Name'];
                 echo " ";
@@ -205,13 +205,14 @@
                 echo $row['DOB'];
                 echo '<br>';
                 echo $row['Student_Number'];
-                echo "<br>";
+                echo '<br>';
+                echo '<input type="radio" id="select" name="Select" value="HTML"> <label for="html">Select</label><br>
+                </html> ';
+                echo '<br>';
             }
-            // Todo, For each row, echo a table with the first name last name and pciture of student, along iwth a button to choose this student IF query rows > 1.
-            
             ?>
+            </form>
         </p>
-    </section>
     <section class="u-align-center u-clearfix u-section-3" id="sec-9c5e">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
             <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
