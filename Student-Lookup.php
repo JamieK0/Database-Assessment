@@ -23,39 +23,25 @@
     }
 
 
-    $result = mysqli_query($con, "SELECT * FROM Student_Info"); //This is needed for the HSC exam
-    
-    while ($row = mysqli_fetch_array($result)) {
-        echo "The student's name is: ";
-        echo $row['First_Name'];
-        echo " ";
-        echo $row['Last_Name'];
-        echo " ";
-        echo "and their Date of Birth is: ";
-        echo $row['DOB'];
-        echo " ";
-        echo $row['House_Team'];
-        echo " ";
-        echo "<BR>";
-    }
-
     /////////////////////////////
     // Code for search form
 /////////////////////////////
     
     $nameErr = "";
     $name = ""; //Name entered into search box
+    $select2 = "";
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["name"])) {
             $nameErr = "Name is required";
         } else {
             $name = test_input($_POST["name"]);
-            echo $_POST["name"]; //debug
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
                 $nameErr = "Only letters and white space allowed";
             }
         }
+        
     }
 
     function test_input($data)
@@ -75,6 +61,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Student Lookup</title>
+    <link rel="stylesheet" href="additional.css">
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="Student-Lookup.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -176,11 +163,14 @@
         </div>
     </section>
         <div class="u-clearfix u-sheet u-sheet-1"></div>
-        <p style="text-align:left;
+
+    <div class="scrolling-wrapper"
+    style="text-align:left;
     padding-top: 50px;
     padding-right: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 410px;
     padding-left: 80px;">
+
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <?php
             $postName = $_POST["name"];
@@ -193,10 +183,11 @@
                 echo ' 
                 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
                 <html>
+                <div class="card">
                 <img src="images/';
                 echo $row['First_Name'];
                 echo $row['Last_Name'];
-                echo '.jpg " width="146" height="220"" />';
+                echo '.jpg " width="150" height="220"" />';
                 echo '<br>';
                 echo $row['First_Name'];
                 echo " ";
@@ -206,13 +197,19 @@
                 echo '<br>';
                 echo $row['Student_Number'];
                 echo '<br>';
-                echo '<input type="radio" id="select" name="Select" value="HTML"> <label for="html">Select</label><br>
-                </html> ';
-                echo '<br>';
+                echo '<input type="radio" value="';
+                echo $select2;
+                echo'"> <label for="html">Select</label><br>
+                </html> </div>';
             }
             ?>
+            </div>
+            <div class="u-align-center">
+            <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
+            </div>
             </form>
-        </p>
+            
+        
     <section class="u-align-center u-clearfix u-section-3" id="sec-9c5e">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
             <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
