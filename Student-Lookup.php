@@ -41,8 +41,13 @@
                 $nameErr = "Only letters and white space allowed";
             }
         }
-        
+        if (empty($_POST["Selection"])) {
+            $nameErr = "Select a student";
+        } else {
+            $select2 = test_input($_POST["Selection"]);
+
     }
+}
 
     function test_input($data)
     {
@@ -162,22 +167,21 @@
         </div>
         </div>
     </section>
-        <div class="u-clearfix u-sheet u-sheet-1"></div>
+    <div class="u-clearfix u-sheet u-sheet-1"></div>
 
-    <div class="scrolling-wrapper"
-    style="text-align:left;
+    <div class="scrolling-wrapper" style="text-align:left;
     padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 410px;
     padding-left: 80px;">
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <?php
             $postName = $_POST["name"];
             echo $postName; //Debug
             echo "<br>"; //Debug
             $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%' OR Last_Name LIKE '%$postName%' OR Student_Number LIKE '%$postName%' ");
-            
+
             while ($row = mysqli_fetch_array($studentInfo)) {
                 $showimage = $row['Image'];
                 echo ' 
@@ -197,19 +201,19 @@
                 echo '<br>';
                 echo $row['Student_Number'];
                 echo '<br>';
-                echo '<input type="radio" value="';
-                echo $select2;
-                echo'"> <label for="html">Select</label><br>
+                echo '<input type="radio" name="Selection" value="';
+                echo $row['Student_Number'];
+                echo '"> <label for="html">Select</label><br>
                 </html> </div>';
             }
             ?>
-            </div>
-            <div class="u-align-center">
-            <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
-            </div>
-            </form>
-            
-        
+    </div>
+    <div class="u-align-center">
+        <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
+    </div>
+    </form>
+
+
     <section class="u-align-center u-clearfix u-section-3" id="sec-9c5e">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
             <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
@@ -252,7 +256,12 @@
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 104px;">
-                                            <td class="u-table-cell">Column 1</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['First_Name'];
+                                            } ?> </td>
+
                                             <td class="u-table-cell">Column 2</td>
                                             <td class="u-table-cell">Column 3</td>
                                             <td class="u-table-cell">Column 4</td>
