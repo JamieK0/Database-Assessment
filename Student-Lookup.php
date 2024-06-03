@@ -197,7 +197,8 @@
                 echo " ";
                 echo $row['Last_Name'];
                 echo "<br>";
-                echo $row['DOB'];
+                echo "Year ";
+                echo $row['Grade'];
                 echo '<br>';
                 echo $row['Student_Number'];
                 echo '<br>';
@@ -245,53 +246,34 @@
                     <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5"
                         role="tabpanel" aria-labelledby="link-tab-0da5">
                         <div class="u-container-layout u-valign-top u-container-layout-1">
-                            <h4 class="u-text u-text-default u-text-1">Basic Settings</h4>
+                            <h4 class="u-text u-text-default u-text-1">Student Details</h4>
                             <div class="u-expanded-width u-table u-table-responsive u-table-1">
-                                <table class="u-table-entity">
-                                    <colgroup>
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
-                                    </colgroup>
-                                    <tbody class="u-table-alt-grey-5 u-table-body">
-                                        <tr style="height: 104px;">
-                                            <td class="u-table-cell"><?php
+                            <?php
                                             $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
                                             while ($row = mysqli_fetch_array($studentInfo)) {
+                                                $showimage = $row['Image'];
+                                                echo ' 
+                                                <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+                                                <html>
+                                                <img src="images/';
                                                 echo $row['First_Name'];
-                                            } ?> </td>
-
-                                            <td class="u-table-cell">Column 2</td>
-                                            <td class="u-table-cell">Column 3</td>
-                                            <td class="u-table-cell">Column 4</td>
-                                        </tr>
-                                        <tr style="height: 51px;">
-                                            <td class="u-table-cell">Row 1</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                        <tr style="height: 51px;">
-                                            <td class="u-table-cell">Row 2</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                        <tr style="height: 51px;">
-                                            <td class="u-table-cell">Row 3</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                        <tr style="height: 52px;">
-                                            <td class="u-table-cell">Row 4</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                                echo $row['Last_Name'];
+                                                echo '.jpg " width="150" height="220"" />';
+                                                echo '<br>';
+                                                echo "Name: ";
+                                                echo $row['First_Name'];
+                                                echo " ";
+                                                echo $row['Last_Name'];
+                                                echo "<br>";
+                                                echo "Year: ";
+                                                echo $row['Grade'];
+                                                echo '<br>';
+                                                echo "Date of Birth: ";
+                                                echo $row['DOB'];
+                                                echo '<br>';
+                                                echo $row['Student_Number'];
+                                                echo '<br>';
+                                            } ?>  
                             </div>
                         </div>
                     </div>
