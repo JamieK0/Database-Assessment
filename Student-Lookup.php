@@ -228,8 +228,7 @@
                     <li class="u-tab-item" role="presentation"><a
                             class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-2"
                             id="link-tab-14b7" href="#tab-14b7" role="tab" aria-controls="tab-14b7"
-                            aria-selected="false">Parent's
-                            Details</a>
+                            aria-selected="false">Contact Infomation</a>
                     </li>
                     <li class="u-tab-item" role="presentation"><a
                             class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-3"
@@ -330,8 +329,8 @@
                     </div>
                     <div class="u-align-left u-container-style u-tab-pane u-white u-tab-pane-2" id="tab-14b7"
                         role="tabpanel" aria-labelledby="link-tab-14b7">
-                        <div class="u-container-layout u-valign-middle u-container-layout-2">
-                            <div class="custom-expanded u-table u-table-responsive u-table-2">
+                        <div class="u-container-layout u-valign-top u-container-layout-1">
+                            <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
                                         <col width="25%">
@@ -339,36 +338,36 @@
                                         <col width="25%">
                                         <col width="25%">
                                     </colgroup>
-                                    <tbody class="u-table-body">
+                                    <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 1</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 2</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 3</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 4</td>
+                                            <td class="u-table-cell"><h4>Contact Infomation</h4></td>
+                                            <td class="u-table-cell">Parent 1</td>
+                                            <td class="u-table-cell">Parent 2</td>
+                                            <td class="u-table-cell">Column 4</td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 1</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-table-cell">Row 1</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 2</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-table-cell">Row 2</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 3</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-table-cell">Row 3</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 4</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                            <td class="u-table-cell">Row 4</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -377,45 +376,84 @@
                     </div>
                     <div class="u-container-style u-tab-pane u-white u-tab-pane-3" id="tab-2917" role="tabpanel"
                         aria-labelledby="link-tab-2917">
-                        <div class="u-container-layout u-valign-bottom u-container-layout-3">
-                            <div class="u-expanded-width u-table u-table-responsive u-table-3">
+                        <div class="u-container-layout u-valign-top u-container-layout-1">
+                            <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
                                         <col width="25%">
                                         <col width="25%">
                                         <col width="25%">
                                         <col width="25%">
+                                        <col width="25%">
                                     </colgroup>
-                                    <tbody class="u-table-body">
-                                        <tr style="height: 64px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 1</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 2</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 3</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 4</td>
+                                    <tbody class="u-table-alt-grey-5 u-table-body">
+                                        <tr style="height: 54px;">
+                                            <td class="u-table-cell"><h4>Grades</h4></td>
+                                            <td class="u-table-cell">Term 1</td>
+                                            <td class="u-table-cell">Term 2</td>
+                                            <td class="u-table-cell">Term 3</td>
+                                            <td class="u-table-cell">Term 4</td>
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 1</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <?php
+                                            $Subjects = mysqli_query($con, "SELECT * FROM Subjects WHERE Student_Number ='$select2' "); // Returns the selected student's subjects
+                                            $T1Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '1' "); // Returns the student's grade in term 1 for the subjects
+                                            $T2Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '2' "); // Returns the student's grade in term 2 for the subjects
+                                            $T3Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '3' "); // Returns the student's grade in term 3 for the subjects
+                                            $T4Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '4' "); // Returns the student's grade in term 4 for the subjects
+                                            // Checks if there are this many subjects, if it is null, this row is not displayed
+                                            while ($subjectList = mysqli_fetch_array($Subjects)) {
+                                                $T1gradeList = mysqli_fetch_array($T1Grades);
+                                                $T2gradeList = mysqli_fetch_array($T2Grades);
+                                                $T3gradeList = mysqli_fetch_array($T3Grades);
+                                                $T4gradeList = mysqli_fetch_array($T4Grades);
+                                                if (is_null($subjectList['Subject_1']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                    echo '<td class="u-table-cell">';
+                                                    echo $subjectList['Subject_1'];
+                                                    echo '<td class="u-table-cell">';
+                                                    echo $T1gradeList['Subject_1'];
+                                                    echo '</td>';
+                                                    echo '<td class="u-table-cell">';
+                                                    echo $T2gradeList['Subject_1'];
+                                                    echo '</td>';
+                                                    echo '<td class="u-table-cell">';
+                                                    echo $T3gradeList['Subject_1'];
+                                                    echo '</td>';
+                                                    echo '<td class="u-table-cell">';
+                                                    echo $T4gradeList['Subject_1'];
+                                                    echo '</td>';
+                                                    echo '</tr>';
+                                                }
+                                                else {
+                                                    echo '</tbody></table>';
+                                                }
+                                                
+                                            } ?>
+
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 2</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 2</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 3</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 3</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 4</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 4</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+
                                         </tr>
                                     </tbody>
                                 </table>
@@ -424,8 +462,8 @@
                     </div>
                     <div class="u-container-style u-tab-pane u-white u-tab-pane-4" id="link-tab-93fc" role="tabpanel"
                         aria-labelledby="tab-93fc">
-                        <div class="u-container-layout u-container-layout-4">
-                            <div class="custom-expanded u-table u-table-responsive u-table-4">
+                        <div class="u-container-layout u-valign-top u-container-layout-1">
+                            <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
                                         <col width="25%">
@@ -433,36 +471,36 @@
                                         <col width="25%">
                                         <col width="25%">
                                     </colgroup>
-                                    <tbody class="u-table-body">
-                                        <tr style="height: 64px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 1</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 2</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 3</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Column 4</td>
+                                    <tbody class="u-table-alt-grey-5 u-table-body">
+                                        <tr style="height: 54px;">
+                                            <td class="u-table-cell"><h4>Contact Infomation</h4></td>
+                                            <td class="u-table-cell">Parent 1</td>
+                                            <td class="u-table-cell">Parent 2</td>
+                                            <td class="u-table-cell">Column 4</td>
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 1</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 1</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 2</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 2</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 3</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 3</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
-                                        <tr style="height: 65px;">
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Row 4</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                                            <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Row 4</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Description</td>
                                         </tr>
                                     </tbody>
                                 </table>
