@@ -46,8 +46,8 @@
         } else {
             $select2 = test_input($_POST["Selection"]);
 
+        }
     }
-}
 
     function test_input($data)
     {
@@ -246,7 +246,6 @@
                     <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5"
                         role="tabpanel" aria-labelledby="link-tab-0da5">
                         <div class="u-container-layout u-valign-top u-container-layout-1">
-                            <h4 class="u-text u-text-default u-text-1">Basic Settings</h4>
                             <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
@@ -257,11 +256,22 @@
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 104px;">
-                                            <td class="u-table-cell">Settings</td>
+                                            <td class="u-table-cell"><h4>Student Details</h4></j></td>
 
-                                            <td class="u-table-cell">Column 2</td>
-                                            <td class="u-table-cell">Column 3</td>
-                                            <td class="u-table-cell">Column 4</td>
+                                            <td class="u-table-cell"></td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                $showimage = $row['Image'];
+                                                echo ' 
+                <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+                <html>
+                <div class="card">
+                <img src="images/';
+                                                echo $row['First_Name'];
+                                                echo $row['Last_Name'];
+                                                echo '.jpg " width="225" height="330"" />';
+                                            } ?></td>
                                         </tr>
                                         <tr style="height: 51px;">
                                             <td class="u-table-cell">Name</td>
@@ -272,26 +282,46 @@
                                                 echo " ";
                                                 echo $row['Last_Name'];
                                             } ?> </td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
                                         </tr>
                                         <tr style="height: 51px;">
-                                            <td class="u-table-cell">Row 2</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                        <tr style="height: 51px;">
-                                            <td class="u-table-cell">Row 3</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Year Group</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['Grade'];
+                                            } ?></td>
                                         </tr>
                                         <tr style="height: 52px;">
-                                            <td class="u-table-cell">Row 4</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">PC Class</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['PC_Class'];
+                                            } ?></td>
+                                        </tr>
+                                        <tr style="height: 51px;">
+                                            <td class="u-table-cell">Student Number</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['Student_Number'];
+                                            } ?></td>
+                                        </tr>
+                                        <tr style="height: 52px;">
+                                            <td class="u-table-cell">House Team</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['House_Team'];
+                                            } ?></td>
+                                        </tr>
+                                        <tr style="height: 52px;">
+                                            <td class="u-table-cell">Date of Birth</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['DOB'];
+                                            } ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
