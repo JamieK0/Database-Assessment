@@ -255,7 +255,10 @@
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 104px;">
-                                            <td class="u-table-cell"><h4>Student Details</h4></j></td>
+                                            <td class="u-table-cell">
+                                                <h4>Student Details</h4>
+                                                </j>
+                                            </td>
 
                                             <td class="u-table-cell"></td>
                                             <td class="u-table-cell"><?php
@@ -340,7 +343,9 @@
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
-                                            <td class="u-table-cell"><h4>Contact Infomation</h4></td>
+                                            <td class="u-table-cell">
+                                                <h4>Contact Infomation</h4>
+                                            </td>
                                             <td class="u-table-cell">Parent 1</td>
                                             <td class="u-table-cell">Parent 2</td>
                                             <td class="u-table-cell">Column 4</td>
@@ -388,73 +393,187 @@
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
-                                            <td class="u-table-cell"><h4>Grades</h4></td>
+                                            <td class="u-table-cell">
+                                                <h4>Grades</h4>
+                                            </td>
                                             <td class="u-table-cell">Term 1</td>
                                             <td class="u-table-cell">Term 2</td>
                                             <td class="u-table-cell">Term 3</td>
                                             <td class="u-table-cell">Term 4</td>
                                         </tr>
-                                        <tr style="height: 57px;">
-                                            <?php
-                                            $Subjects = mysqli_query($con, "SELECT * FROM Subjects WHERE Student_Number ='$select2' "); // Returns the selected student's subjects
-                                            $T1Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '1' "); // Returns the student's grade in term 1 for the subjects
-                                            $T2Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '2' "); // Returns the student's grade in term 2 for the subjects
-                                            $T3Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '3' "); // Returns the student's grade in term 3 for the subjects
-                                            $T4Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '4' "); // Returns the student's grade in term 4 for the subjects
-                                            // Checks if there are this many subjects, if it is null, this row is not displayed
-                                            while ($subjectList = mysqli_fetch_array($Subjects)) {
-                                                $T1gradeList = mysqli_fetch_array($T1Grades);
-                                                $T2gradeList = mysqli_fetch_array($T2Grades);
-                                                $T3gradeList = mysqli_fetch_array($T3Grades);
-                                                $T4gradeList = mysqli_fetch_array($T4Grades);
-                                                if (is_null($subjectList['Subject_1']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+
+                                        <?php
+                                        $Subjects = mysqli_query($con, "SELECT * FROM Subjects WHERE Student_Number ='$select2' "); // Returns the selected student's subjects
+                                        $T1Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '1' "); // Returns the student's grade in term 1 for the subjects
+                                        $T2Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '2' "); // Returns the student's grade in term 2 for the subjects
+                                        $T3Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '3' "); // Returns the student's grade in term 3 for the subjects
+                                        $T4Grades = mysqli_query($con, "SELECT * FROM Student_Grades WHERE Student_Number ='$select2' AND Term = '4' "); // Returns the student's grade in term 4 for the subjects
+                                        // Checks if there are this many subjects, if it is null, this row is not displayed
+                                        while ($subjectList = mysqli_fetch_array($Subjects)) {
+                                            $T1gradeList = mysqli_fetch_array($T1Grades);
+                                            $T2gradeList = mysqli_fetch_array($T2Grades);
+                                            $T3gradeList = mysqli_fetch_array($T3Grades);
+                                            $T4gradeList = mysqli_fetch_array($T4Grades);
+                                            if (is_null($subjectList['Subject_1']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                echo $subjectList['Subject_1'];
+                                                echo '<td class="u-table-cell">';
+                                                echo $T1gradeList['Subject_1'];
+                                                echo '</td>';
+                                                echo '<td class="u-table-cell">';
+                                                echo $T2gradeList['Subject_1'];
+                                                echo '</td>';
+                                                echo '<td class="u-table-cell">';
+                                                echo $T3gradeList['Subject_1'];
+                                                echo '</td>';
+                                                echo '<td class="u-table-cell">';
+                                                echo $T4gradeList['Subject_1'];
+                                                echo '</td>';
+                                                echo '</tr>';
+                                                if (is_null($subjectList['Subject_2']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                    echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                    echo $subjectList['Subject_2'];
                                                     echo '<td class="u-table-cell">';
-                                                    echo $subjectList['Subject_1'];
-                                                    echo '<td class="u-table-cell">';
-                                                    echo $T1gradeList['Subject_1'];
+                                                    echo $T1gradeList['Subject_2'];
                                                     echo '</td>';
                                                     echo '<td class="u-table-cell">';
-                                                    echo $T2gradeList['Subject_1'];
+                                                    echo $T2gradeList['Subject_2'];
                                                     echo '</td>';
                                                     echo '<td class="u-table-cell">';
-                                                    echo $T3gradeList['Subject_1'];
+                                                    echo $T3gradeList['Subject_2'];
                                                     echo '</td>';
                                                     echo '<td class="u-table-cell">';
-                                                    echo $T4gradeList['Subject_1'];
+                                                    echo $T4gradeList['Subject_2'];
                                                     echo '</td>';
                                                     echo '</tr>';
-                                                }
-                                                else {
+                                                    if (is_null($subjectList['Subject_3']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                        echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                        echo $subjectList['Subject_3'];
+                                                        echo '<td class="u-table-cell">';
+                                                        echo $T1gradeList['Subject_3'];
+                                                        echo '</td>';
+                                                        echo '<td class="u-table-cell">';
+                                                        echo $T2gradeList['Subject_3'];
+                                                        echo '</td>';
+                                                        echo '<td class="u-table-cell">';
+                                                        echo $T3gradeList['Subject_3'];
+                                                        echo '</td>';
+                                                        echo '<td class="u-table-cell">';
+                                                        echo $T4gradeList['Subject_3'];
+                                                        echo '</td>';
+                                                        echo '</tr>';
+                                                        if (is_null($subjectList['Subject_4']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                            echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                            echo $subjectList['Subject_4'];
+                                                            echo '<td class="u-table-cell">';
+                                                            echo $T1gradeList['Subject_4'];
+                                                            echo '</td>';
+                                                            echo '<td class="u-table-cell">';
+                                                            echo $T2gradeList['Subject_4'];
+                                                            echo '</td>';
+                                                            echo '<td class="u-table-cell">';
+                                                            echo $T3gradeList['Subject_4'];
+                                                            echo '</td>';
+                                                            echo '<td class="u-table-cell">';
+                                                            echo $T4gradeList['Subject_4'];
+                                                            echo '</td>';
+                                                            echo '</tr>';
+                                                            if (is_null($subjectList['Subject_5']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                                echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                                echo $subjectList['Subject_5'];
+                                                                echo '<td class="u-table-cell">';
+                                                                echo $T1gradeList['Subject_5'];
+                                                                echo '</td>';
+                                                                echo '<td class="u-table-cell">';
+                                                                echo $T2gradeList['Subject_5'];
+                                                                echo '</td>';
+                                                                echo '<td class="u-table-cell">';
+                                                                echo $T3gradeList['Subject_5'];
+                                                                echo '</td>';
+                                                                echo '<td class="u-table-cell">';
+                                                                echo $T4gradeList['Subject_5'];
+                                                                echo '</td>';
+                                                                echo '</tr>';
+                                                                if (is_null($subjectList['Subject_6']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                                    echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                                    echo $subjectList['Subject_6'];
+                                                                    echo '<td class="u-table-cell">';
+                                                                    echo $T1gradeList['Subject_6'];
+                                                                    echo '</td>';
+                                                                    echo '<td class="u-table-cell">';
+                                                                    echo $T2gradeList['Subject_6'];
+                                                                    echo '</td>';
+                                                                    echo '<td class="u-table-cell">';
+                                                                    echo $T3gradeList['Subject_6'];
+                                                                    echo '</td>';
+                                                                    echo '<td class="u-table-cell">';
+                                                                    echo $T4gradeList['Subject_6'];
+                                                                    echo '</td>';
+                                                                    echo '</tr>';
+                                                                    if (is_null($subjectList['Subject_7']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                                        echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                                        echo $subjectList['Subject_7'];
+                                                                        echo '<td class="u-table-cell">';
+                                                                        echo $T1gradeList['Subject_7'];
+                                                                        echo '</td>';
+                                                                        echo '<td class="u-table-cell">';
+                                                                        echo $T2gradeList['Subject_7'];
+                                                                        echo '</td>';
+                                                                        echo '<td class="u-table-cell">';
+                                                                        echo $T3gradeList['Subject_7'];
+                                                                        echo '</td>';
+                                                                        echo '<td class="u-table-cell">';
+                                                                        echo $T4gradeList['Subject_7'];
+                                                                        echo '</td>';
+                                                                        echo '</tr>';
+                                                                        if (is_null($subjectList['Subject_1']) != 1) { // If row has an entered subject, then it will display the results. Otherwise it will end the table
+                                                                            echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                                            echo $subjectList['Subject_8'];
+                                                                            echo '<td class="u-table-cell">';
+                                                                            echo $T1gradeList['Subject_8'];
+                                                                            echo '</td>';
+                                                                            echo '<td class="u-table-cell">';
+                                                                            echo $T2gradeList['Subject_8'];
+                                                                            echo '</td>';
+                                                                            echo '<td class="u-table-cell">';
+                                                                            echo $T3gradeList['Subject_8'];
+                                                                            echo '</td>';
+                                                                            echo '<td class="u-table-cell">';
+                                                                            echo $T4gradeList['Subject_8'];
+                                                                            echo '</td>';
+                                                                            echo '</tr>';
+                                                                        }
+                                                                        else {
+                                                                            echo '</tbody></table>';
+                                                                        }
+                                                                    }
+                                                                    else {
+                                                                        echo '</tbody></table>';
+                                                                    }
+                                                                }
+                                                                else {
+                                                                    echo '</tbody></table>';
+                                                                }
+                                                            }
+                                                            else {
+                                                                echo '</tbody></table>';
+                                                            }
+                                                        }
+                                                        else {
+                                                            echo '</tbody></table>';
+                                                        }
+                                                    } else {
+                                                        echo '</tbody></table>';
+                                                    }
+                                                } else {
                                                     echo '</tbody></table>';
                                                 }
-                                                
-                                            } ?>
+                                            } else {
+                                                echo '</tbody></table>';
+                                            }
 
-                                        </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 2</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                        } ?>
 
-                                        </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 3</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-
-                                        </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 4</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -473,7 +592,9 @@
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
-                                            <td class="u-table-cell"><h4>Contact Infomation</h4></td>
+                                            <td class="u-table-cell">
+                                                <h4>Contact Infomation</h4>
+                                            </td>
                                             <td class="u-table-cell">Parent 1</td>
                                             <td class="u-table-cell">Parent 2</td>
                                             <td class="u-table-cell">Column 4</td>
