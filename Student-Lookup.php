@@ -385,11 +385,11 @@
                             <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
@@ -585,43 +585,46 @@
                             <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="20%">
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
                                             <td class="u-table-cell">
-                                                <h4>Contact Infomation</h4>
+                                                <h4>Attendance</h4>
                                             </td>
-                                            <td class="u-table-cell">Parent 1</td>
-                                            <td class="u-table-cell">Parent 2</td>
-                                            <td class="u-table-cell">Column 4</td>
+                                            <td class="u-table-cell">Term 1</td>
+                                            <td class="u-table-cell">Term 2</td>
+                                            <td class="u-table-cell">Term 3</td>
+                                            <td class="u-table-cell">Term 4</td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 1</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Days Absent</td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['Term_1'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['Term_2'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['Term_3'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($studentInfo)) {
+                                                echo $row['Term_4'];
+                                            } ?></td>
                                         </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 2</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 3</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                        </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 4</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+
                                         </tr>
                                     </tbody>
                                 </table>
