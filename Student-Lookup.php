@@ -283,7 +283,7 @@
                                                 echo $row['First_Name'];
                                                 echo " ";
                                                 echo $row['Last_Name'];
-                                            } ?> </td>
+                                            } ?></td>
                                         </tr>
                                         <tr style="height: 51px;">
                                             <td class="u-table-cell">Year Group</td>
@@ -336,10 +336,9 @@
                             <div class="u-expanded-width u-table u-table-responsive u-table-1">
                                 <table class="u-table-entity">
                                     <colgroup>
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
-                                        <col width="25%">
+                                        <col width="20%">
+                                        <col width="40">
+                                        <col width="40%">
                                     </colgroup>
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
@@ -348,31 +347,75 @@
                                             </td>
                                             <td class="u-table-cell">Parent 1</td>
                                             <td class="u-table-cell">Parent 2</td>
-                                            <td class="u-table-cell">Column 4</td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 1</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Name</td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['First_Name_1'];
+                                                echo " ";
+                                                echo $row['Last_Name_1'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['First_Name_2'];
+                                                echo " ";
+                                                echo $row['Last_Name_2'];
+                                            } ?></td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 2</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Address</td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Home_Address_1'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Home_Address_2'];
+                                            } ?></td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 3</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Home Phone</td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Home_Phone_1'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Home_Phone_2'];
+                                            } ?></td>
                                         </tr>
                                         <tr style="height: 57px;">
-                                            <td class="u-table-cell">Row 4</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
-                                            <td class="u-table-cell">Description</td>
+                                            <td class="u-table-cell">Mobile Phone</td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Mobile_Phone_1'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Mobile_Phone_2'];
+                                            } ?></td>
+                                        </tr>
+                                        <tr style="height: 57px;">
+                                            <td class="u-table-cell">Work Phone</td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Work_Phone_1'];
+                                            } ?></td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Work_Phone_2'];
+                                            } ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -643,17 +686,10 @@
 
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3fdc">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
+            <p class="u-small-text u-text u-text-variant u-text-1">© Protractor Education 2024</p>
         </div>
     </footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-        <p class="u-text">
-            <span>This site was created with the </span>
-            <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
-                <span>Nicepage</span>
-            </a>
-        </p>
-    </section>
+
 
 </body>
 
