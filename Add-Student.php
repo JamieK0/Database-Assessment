@@ -38,16 +38,16 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Student-Lookup.html" style="padding: 10px 20px;">Student Lookup</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Add-Student.html" style="padding: 10px 20px;">Add Student</a>
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Student-Lookup.php" style="padding: 10px 20px;">Student Lookup</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Add-Student.php" style="padding: 10px 20px;">Add Student</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Student-Lookup.html">Student Lookup</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Add-Student.html">Add Student</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Student-Lookup.php">Student Lookup</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Add-Student.php">Add Student</a>
 </li></ul>
               </div>
             </div>
@@ -59,16 +59,16 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-text u-text-default u-text-1">Add Student</p>
         <div class="u-carousel u-carousel-duration-250 u-carousel-fade u-form u-progress-text-hidden-sm u-progress-text-hidden-xs u-form-1" data-interval="0" data-u-ride="false" id="carousel-cb4a">
-          <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
             <div class="u-carousel-inner" role="listbox">
               <div class="u-carousel-item u-form-step u-slide u-active">
                 <div class="u-form-group u-form-name u-form-partition-factor-2">
                   <label for="name-883e" class="u-label">First Name</label>
-                  <input type="text" placeholder="Enter Name" id="name-883e" name="name" class="u-input u-input-rectangle" required="">
+                  <input type="text" placeholder="Enter First Name of the Student" value="<?php echo $StuFirstName; ?>" name="StuFirstName" class="u-input u-input-rectangle">
                 </div>
                 <div class="u-form-group u-form-partition-factor-2 u-form-group-2">
                   <label for="text-acc6" class="u-label">Last Name</label>
-                  <input type="text" placeholder="Enter Last name" id="text-acc6" name="text" class="u-input u-input-rectangle">
+                  <input type="text" placeholder="Enter Last name of the Student" value="<?php echo $StuLastName; ?>" name="StuLastName" class="u-input u-input-rectangle">
                 </div>
                 <div class="u-form-email u-form-group">
                   <label for="email-883e" class="u-label">Email</label>

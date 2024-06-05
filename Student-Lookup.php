@@ -120,11 +120,11 @@
                     <ul class="u-nav u-unstyled u-nav-1">
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="Student-Lookup.html" style="padding: 10px 20px;">Student Lookup</a>
+                                href="Student-Lookup.php" style="padding: 10px 20px;">Student Lookup</a>
                         </li>
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="Add-Student.html" style="padding: 10px 20px;">Add Student</a>
+                                href="Add-Student.php" style="padding: 10px 20px;">Add Student</a>
                         </li>
                     </ul>
                 </div>
@@ -291,6 +291,14 @@
                                             $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE Student_Number ='$select2' ");
                                             while ($row = mysqli_fetch_array($studentInfo)) {
                                                 echo $row['Grade'];
+                                            } ?></td>
+                                        </tr>
+                                        <tr style="height: 52px;">
+                                            <td class="u-table-cell">Email</td>
+                                            <td class="u-table-cell"><?php
+                                            $contactInfo = mysqli_query($con, "SELECT * FROM Contact_Info WHERE Student_Number ='$select2' ");
+                                            while ($row = mysqli_fetch_array($contactInfo)) {
+                                                echo $row['Email'];
                                             } ?></td>
                                         </tr>
                                         <tr style="height: 52px;">
