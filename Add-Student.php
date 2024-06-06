@@ -33,11 +33,19 @@
   $StuLastName = "";
   $StuEmail = "";
   $StuDOB = "";
+  $StuYear = "";
+  $stuHouse = "";
+  $StuPC = "";
+  $StuNumber = "";
 
   $StuFirstNameErr = "";
   $StuLastNameErr = "";
   $StuEmailErr = "";
   $StuDOBErr = "";
+  $StuYearErr = "";
+  $stuHouseErr = "";
+  $StuPCErr = "";
+  $StuNumberErr = "";
 
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -65,12 +73,34 @@
     }
     // DOB
     if (empty($_POST["StuDOB"])) {
-      $StuDOBErr = "Email is required";
+      $StuDOBErr = "Date of Birth is required";
     } else {
       $StuDOB = test_input($_POST["StuDOB"]);
     }
-
-
+    // Year Group
+    if (empty($_POST["StuYear"])) {
+      $StuYearErr = "Year Group is required";
+    } else {
+      $StuYear = test_input($_POST["StuYear"]);
+    }
+    // House
+    if (empty($_POST["stuHouse"])) {
+      $stuHouseErr = "House team is required";
+    } else {
+      $stuHouse = test_input($_POST["stuHouse"]);
+    }
+    // PC
+    if (empty($_POST["stuPC"])) {
+      $StuPCErr = "PC class is required";
+    } else {
+      $StuPC = test_input($_POST["stuPC"]);
+    }
+    // Student Number
+    if (empty($_POST["StuNumber"])) {
+      $StuNumberErr = "Student number is required";
+    } else {
+      $StuNumber = test_input($_POST["StuNumber"]);
+    }
   }
 
   function test_input($data)
