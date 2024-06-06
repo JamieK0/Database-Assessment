@@ -160,7 +160,7 @@
                     </div>
 
                     <div class="u-align-center u-form-group u-form-submit u-label-top">
-                        <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
+                        <input type="submit" value="Submit" class="u-btn u-btn-submit u-button-style">
                     </div>
                     <input type="hidden" value="" name="recaptchaResponse">
             </form>
@@ -210,7 +210,7 @@
             ?>
     </div>
     <div class="u-align-center">
-        <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
+        <input type="submit" value="Submit" class="u-btn u-btn-submit u-button-style">
     </div>
     </form>
 
