@@ -49,62 +49,15 @@
 
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // FIRST NAME
-    if (empty($_POST["StuFirstName"])) {
-      $nameErr = "Name is required";
-    } else {
-      $StuFirstName = test_input($_POST["StuFirstName"]);
-      // check if name only contains letters and whitespace
-      if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-        $StuFirstNameErr = "Only letters and white space allowed";
-      }
-    }
-    // LAST NAME
-    if (empty($_POST["StuLastName"])) {
-      $StuLastNameErr = "Name is required";
-    } else {
-      $StuLastName = test_input($_POST["StuLastName"]);
-    }
-    // Email
-    if (empty($_POST["StuEmail"])) {
-      $StuEmailErr = "Email is required";
-    } else {
-      $StuEmail = test_input($_POST["StuEmail"]);
-      //if (!filter_var($StuEmail, FILTER_VALIDATE_EMAIL)) {
-        //$StuEmailErr = "Invalid email format";
-      //}
+    $StuFirstName = test_input($_POST["StuFirstName"]);
+    $StuLastName = test_input($_POST["StuLastName"]);
+    $StuEmail = test_input($_POST["StuEmail"]);
+    $StuDOB = test_input($_POST["StuDOB"]);
+    $StuYear = test_input($_POST["StuYear"]);
+    $StuHouse = test_input($_POST["StuHouse"]);
+    $StuPC = test_input($_POST["stuPC"]);
+    $StuNumber = test_input($_POST["StuNumber"]);
 
-    }
-    // DOB
-    if (empty($_POST["StuDOB"])) {
-      $StuDOBErr = "Date of Birth is required";
-    } else {
-      $StuDOB = test_input($_POST["StuDOB"]);
-    }
-    // Year Group
-    if (empty($_POST["StuYear"])) {
-      $StuYearErr = "Year Group is required";
-    } else {
-      $StuYear = test_input($_POST["StuYear"]);
-    }
-    // House
-    if (empty($_POST["StuHouse"])) {
-      $StuHouseErr = "House team is required";
-    } else {
-      $StuHouse = test_input($_POST["StuHouse"]);
-    }
-    // PC
-    if (empty($_POST["stuPC"])) {
-      $StuPCErr = "PC class is required";
-    } else {
-      $StuPC = test_input($_POST["stuPC"]);
-    }
-    // Student Number
-    if (empty($_POST["StuNumber"])) {
-      $StuNumberErr = "Student number is required";
-    } else {
-      $StuNumber = test_input($_POST["StuNumber"]);
-    }
     // Inserts into database
       $query = "INSERT INTO `Student_Info` (`First_Name`, `Last_Name`, `Grade`, `PC_Class`, `Student_Number`, `DOB`, `House_Team`) 
       VALUES ('$StuFirstName', '$StuLastName', '$StuYear', '$StuPC', '$StuNumber', '$StuDOB', '$StuHouse');";
@@ -136,6 +89,7 @@
   <title>Add Student</title>
   <link rel="stylesheet" href="nicepage.css" media="screen">
   <link rel="stylesheet" href="Add-Student.css" media="screen">
+  <link rel="stylesheet" href="additional.css" media="screen">
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 6.10.5, nicepage.com">
@@ -214,9 +168,9 @@
       <p class="u-text u-text-default u-text-1">Add Student</p>
       <div
         class="u-carousel u-carousel-duration-250 u-carousel-fade u-form u-progress-text-hidden-sm u-progress-text-hidden-xs u-form-1"
-        data-interval="0" data-u-ride="false" id="carousel-cb4a">
+        data-interval="0" data-u-ride="false">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
-          class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form"
+          class="u-clearfix u-form-spacing-10 custom-form u-inner-form" source="" name="form"
           style="padding: 10px;">
           <div class="u-carousel-inner" role="listbox">
             <div class="u-carousel-item u-form-step u-slide u-active">
@@ -237,21 +191,21 @@
               </div>
               <div class="u-form-date u-form-group u-form-partition-factor-3 u-form-group-4">
                 <label for="date-a19e" class="u-label">Date of Birth</label>
-                <input type="text" placeholder="MM/DD/YYYY" id="date-a19e" name="StuDOB" value="<?php echo $StuDOB; ?>"
-                  class="u-input u-input-rectangle" required="" data-date-format="mm/dd/yyyy">
+                <input type="text" placeholder="MM/DD/YYYY" name="StuDOB" value="<?php echo $StuDOB; ?>"
+                  class="u-input u-input-rectangle" required="" data-date-format="yyyy/mm/dd">
               </div>
               <div
                 class="u-form-group u-form-number u-form-number-layout-number u-form-partition-factor-3 u-form-group-5">
                 <label for="number-0b03" class="u-label">Year Group</label>
                 <div class="u-input-row" data-value="0">
                   <input value="0" min="7" max="12" step="1" type="number" value="<?php echo $StuYear; ?>"
-                    placeholder="" id="number-0b03" name="StuYear" class="u-input u-input-rectangle u-text-black">
+                    placeholder="" name="StuYear" class="u-input u-input-rectangle u-text-black">
                 </div>
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-select u-form-group-6">
                 <label for="select-15af" class="u-label">House Group</label>
                 <div class="u-form-select-wrapper">
-                  <select id="select-15af" name="StuHouse" class="u-input u-input-rectangle">
+                  <select name="StuHouse" class="u-input u-input-rectangle">
                     <option value="Merici" data-calc="">Merici</option>
                     <option value="Mackillop" data-calc="">Mackillop</option>
                     <option value="Chisholm" data-calc="">Chisholm</option>
@@ -268,12 +222,12 @@
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-group-7">
                 <label for="text-d46f" class="u-label">PC Class</label>
-                <input type="text" placeholder="" value="<?php echo $StuPC; ?>" id="text-d46f" name="StuPC"
+                <input type="text" placeholder="" value="<?php echo $StuPC; ?>" name="StuPC"
                   class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-group-8">
                 <label for="text-9a7c" class="u-label">Student Number</label>
-                <input type="text" placeholder="" value="<?php echo $StuNumber; ?>" id="text-9a7c" name="StuNumber"
+                <input type="text" placeholder="" value="<?php echo $StuNumber; ?>" name="StuNumber"
                   class="u-input u-input-rectangle">
               </div>
             </div>
@@ -282,18 +236,13 @@
           <div class="u-align-left u-form-group u-form-submit">
             <a href="#" class="u-btn u-btn-step u-btn-step-prev u-button-style u-hidden">Back</a>
             <a href="#" class="u-btn u-btn-step u-btn-step-next u-button-style">Next</a>
-            <input type="submit" value="Submit" name="Submit" class="u-btn u-btn-submit u-button-style">
+            <input type="submit" value="Submit" name="Submit" class="">
 
             <input type="hidden" value="" name="recaptchaResponse">
             <input type="hidden" value="" name="recaptchaResponse">
         </form>
       </div>
     </div>
-    <?php 
-  echo $StuFirstName;
-
-    
-    ?>
   </section>
 
 
