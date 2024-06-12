@@ -38,6 +38,8 @@
   $StuPC = "";
   $StuNumber = "";
 
+  $P1FistName = $P2FirstName = $P1LastName = $P2LastName = $P1Address = $P2Address = $P1Mobile = $P2Mobile = $P1Work = $P2Work = $P1Home = $P2Home = "";
+
   $StuFirstNameErr = "";
   $StuLastNameErr = "";
   $StuEmailErr = "";
