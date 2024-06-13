@@ -68,8 +68,8 @@
     $P2LastName = test_input($_POST["P2LastName"]);
     $P1Address = test_input($_POST["P1Address"]);
     $P2Address = test_input($_POST["P2Address"]);
-    $P1Mobile = test_input($_POST["P1Mobile;"]);
-    $P2Mobile = test_input($_POST["P2Mobile;"]);
+    $P1Mobile = test_input($_POST["P1Mobile"]);
+    $P2Mobile = test_input($_POST["P2Mobile"]);
     $P1Work = test_input($_POST["P1Work"]);
     $P2Work = test_input($_POST["P2Work"]);
     $P1Home = test_input($_POST["P1Home"]);
@@ -87,7 +87,7 @@
 
     // Insert into Contact Info Table
     $queryContInfo = "INSERT INTO `Contact_Info` (`First_Name_1`, `First_Name_2`, `Last_Name_1`, `Last_Name_2`, `Student_Number`, `Email`, `Home_Address_1`, `Home_Address_2`, `Home_Phone_1`, `Home_Phone_2`, `Work_Phone_1`, `Work_Phone_2`, `Mobile_Phone_1`, `Mobile_Phone_2`) 
-        VALUES ('$P1FirstName', '$P2FirstName', '$P1LastName', '$P2LastName', '$StuNumber', '$StuEmail', '$P1Address', '$P2Address', '$P1Home',  '$P2Home', '$P1Work', '$P2Work', '$P1Mobile', '$P2Mobile' );";
+        VALUES ('$P1FirstName', '$P2FirstName', '$P1LastName', '$P2LastName', '$StuNumber', '$StuEmail', '$P1Address', '$P2Address', '$P1Home',  '$P2Home', '$P1Work', '$P2Work', '$P1Mobile','$P1Mobile' );";
     if (mysqli_query($con, $queryContInfo)) {
       echo "Parent Info added successfully";
     } else {
