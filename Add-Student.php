@@ -28,7 +28,7 @@
   // Code for form
 /////////////////////////////
   
-  // Establish form variables
+  // Establish page 1 form variables
   $StuFirstName = "";
   $StuLastName = "";
   $StuEmail = "";
@@ -38,7 +38,11 @@
   $StuPC = "";
   $StuNumber = "";
 
+  // Establish page 2 form variables
   $P1FirstName = $P2FirstName = $P1LastName = $P2LastName = $P1Address = $P2Address = $P1Mobile = $P2Mobile = $P1Work = $P2Work = $P1Home = $P2Home = "";
+
+  // Establish page 3 form variables
+  $Sub1 = $Sub2 = $Sub3 = $Sub4 = $sub5 = $Sub6 = $Sub7 = $sub8 = "";
 
   $StuFirstNameErr = "";
   $StuLastNameErr = "";
@@ -76,6 +80,16 @@
     $P2Home = test_input($_POST["P2Home"]);
 
 
+    // Page 3
+    $Sub1 = test_input($_POST["Sub1"]);
+    $Sub2 = test_input($_POST["Sub2"]);
+    $Sub3 = test_input($_POST["Sub3"]);
+    $Sub4 = test_input($_POST["Sub4"]);
+    $Sub5 = test_input($_POST["Sub5"]);
+    $Sub6 = test_input($_POST["Sub6"]);
+    $Sub7 = test_input($_POST["Sub7"]);
+    $Sub8 = test_input($_POST["Sub8"]);
+
     // Insert into Student Info Table
     $queryStuInfo = "INSERT INTO `Student_Info` (`First_Name`, `Last_Name`, `Grade`, `PC_Class`, `Student_Number`, `DOB`, `House_Team`) 
       VALUES ('$StuFirstName', '$StuLastName', '$StuYear', '$StuPC', '$StuNumber', '$StuDOB', '$StuHouse');";
@@ -93,6 +107,15 @@
     } else {
       echo "Error: " . $queryContInfo . "<br>" . mysqli_error($con);
     }
+
+    // Insert into Subject Info Table
+    $querySubInfo = "INSERT INTO `Contact_Info` (`Student_Number`, `Subject_1`, `Subject_2`, `Subject_3`, `Subject_4`, `Subject_5`, `Subject_6`, `Subject_7`, `Subject_8` ) 
+    VALUES ('$StuNumber', '$Sub1', '$Sub2', '$Sub3', '$Sub4',  '$Sub5', '$Sub6', '$Sub7', '$Sub8' );";
+if (mysqli_query($con, $querySubInfo)) {
+  echo "Parent Info added successfully";
+} else {
+  echo "Error: " . $querySubInfo . "<br>" . mysqli_error($con);
+}
 
   }
 
@@ -228,7 +251,7 @@
               </div>
               <div
                 class="u-form-group u-form-number u-form-number-layout-number u-form-partition-factor-3 u-form-group-5"
-                style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
+                style="text-align:left; padding-top: 10px; padding-right: 5px; padding-bottom: 10px;">
                 <label for="number-0b03" class="u-label">Year Group</label>
                 <div class="u-input-row" data-value="0">
                   <input value="0" min="7" max="12" step="1" type="number" value="<?php echo $StuYear; ?>"
@@ -357,42 +380,42 @@
               <div class="u-form-group u-form-group-21"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-a614" class="u-label">Subject 1</label>
-                <input type="text" placeholder="" id="text-a614" name="text" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub1; ?>" name="Sub1" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-group-22"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-6d19" class="u-label">Subject 2</label>
-                <input type="text" placeholder="" id="text-6d19" name="text-1" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub2; ?>" name="Sub2" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-group-23"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-9824" class="u-label">Subject 3</label>
-                <input type="text" placeholder="" id="text-9824" name="text-2" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub3; ?>" name="Sub3" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-group-24"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-bd56" class="u-label">Subject 4</label>
-                <input type="text" placeholder="" id="text-bd56" name="text-3" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub4; ?>" name="Sub4" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-group-25"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-60ac" class="u-label">Subject 5</label>
-                <input type="text" placeholder="" id="text-60ac" name="text-4" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub5; ?>" name="Sub5" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-group-26"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px; ">
                 <label for="text-0a0b" class="u-label">Subject 6</label>
-                <input type="text" placeholder="" id="text-0a0b" name="text-5" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub6; ?>" name="Sub6" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-group-27"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-225e" class="u-label">Subject 7</label>
-                <input type="text" placeholder="" id="text-225e" name="text-6" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub7; ?>" name="Sub7" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-group-28"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-368e" class="u-label">Subject 8</label>
-                <input type="text" placeholder="" id="text-368e" name="text-7" class="u-input u-input-rectangle">
+                <input type="text" placeholder="" value="<?php echo $Sub8; ?>" name="Sub8" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-group-21"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px; padding-left: 160px;">
