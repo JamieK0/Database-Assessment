@@ -593,24 +593,19 @@
                                                                             echo $T4gradeList['Subject_8'];
                                                                             echo '</td>';
                                                                             echo '</tr>';
-                                                                        }
-                                                                        else {
+                                                                        } else {
                                                                             echo '</tbody></table>';
                                                                         }
-                                                                    }
-                                                                    else {
+                                                                    } else {
                                                                         echo '</tbody></table>';
                                                                     }
-                                                                }
-                                                                else {
+                                                                } else {
                                                                     echo '</tbody></table>';
                                                                 }
-                                                            }
-                                                            else {
+                                                            } else {
                                                                 echo '</tbody></table>';
                                                             }
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo '</tbody></table>';
                                                         }
                                                     } else {
@@ -679,6 +674,12 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div style="padding: 25px 0px 0px 0px;">
+                                    <form action="add-attendance.php" method="post">
+                                        <input type="hidden" name="studentNumber" value=<?php echo $select2 ?>>
+                                        <input type="submit" value="Add Attendance" class="u-btn u-btn-submit u-button-style">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

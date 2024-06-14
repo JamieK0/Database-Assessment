@@ -109,7 +109,7 @@
     }
 
     // Insert into Subject Info Table
-    $querySubInfo = "INSERT INTO `Contact_Info` (`Student_Number`, `Subject_1`, `Subject_2`, `Subject_3`, `Subject_4`, `Subject_5`, `Subject_6`, `Subject_7`, `Subject_8` ) 
+    $querySubInfo = "INSERT INTO `Subjects` (`Student_Number`, `Subject_1`, `Subject_2`, `Subject_3`, `Subject_4`, `Subject_5`, `Subject_6`, `Subject_7`, `Subject_8` ) 
     VALUES ('$StuNumber', '$Sub1', '$Sub2', '$Sub3', '$Sub4',  '$Sub5', '$Sub6', '$Sub7', '$Sub8' );";
 if (mysqli_query($con, $querySubInfo)) {
   echo "Parent Info added successfully";
