@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-palette-1-base u-header" id="sec-9160"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="#" class="u-image u-logo u-image-1">
+        <a href="index.php" class="u-image u-logo u-image-1">
           <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
@@ -37,8 +37,8 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Student-Lookup.html" style="padding: 10px 20px;">Student Lookup</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Add-Student.html" style="padding: 10px 20px;">Add Student</a>
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Student-Lookup.php" style="padding: 10px 20px;">Student Lookup</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Add-Student.php" style="padding: 10px 20px;">Add Student</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -49,11 +49,15 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Add-Student.html">Add Student</a>
 </li></ul>
               </div>
+              
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+            
           </div>
         </nav>
       </div></header>
+      <h2 style="text-align:center; padding: 50px">Welcome to Protractor Education</h2>
+
     <section class="u-clearfix u-section-1" id="sec-7bed">
       <div class="u-clearfix u-sheet u-sheet-1"></div>
     </section>
