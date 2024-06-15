@@ -25,7 +25,6 @@
 
 
   // Receive student number from last page
-
   $studentNumber = $_POST['studentNumber']; 
   echo "Data received: " . $studentNumber; 
 
@@ -34,94 +33,30 @@
   // Code for form
 /////////////////////////////
   
-  // Establish page 1 form variables
-  $StuFirstName = "";
-  $StuLastName = "";
-  $StuEmail = "";
-  $StuDOB = "";
-  $StuYear = "";
-  $StuHouse = "";
-  $StuPC = "";
-  $StuNumber = "";
+  // Establish form variables
+  $T1 = $T2 = $T3 = $T4 = $StuYear = "";
 
-  // Establish page 2 form variables
-  $P1FirstName = $P2FirstName = $P1LastName = $P2LastName = $P1Address = $P2Address = $P1Mobile = $P2Mobile = $P1Work = $P2Work = $P1Home = $P2Home = "";
 
-  // Establish page 3 form variables
-  $Sub1 = $Sub2 = $Sub3 = $Sub4 = $sub5 = $Sub6 = $Sub7 = $sub8 = "";
-
-  $StuFirstNameErr = "";
-  $StuLastNameErr = "";
-  $StuEmailErr = "";
-  $StuDOBErr = "";
-  $StuYearErr = "";
-  $StuHouseErr = "";
-  $StuPCErr = "";
-  $StuNumberErr = "";
 
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Page 1
-    $StuFirstName = test_input($_POST["StuFirstName"]);
-    $StuLastName = test_input($_POST["StuLastName"]);
-    $StuEmail = test_input($_POST["StuEmail"]);
-    $StuDOB = test_input($_POST["StuDOB"]);
+ 
+    $T1 = test_input($_POST["T1"]);
+    $T2 = test_input($_POST["T2"]);
+    $T3 = test_input($_POST["T3"]);
+    $T4 = test_input($_POST["T4"]);
     $StuYear = test_input($_POST["StuYear"]);
-    $StuHouse = test_input($_POST["StuHouse"]);
-    $StuPC = test_input($_POST["stuPC"]);
-    $StuNumber = test_input($_POST["StuNumber"]);
+    $num = test_input($_POST["num"]);
 
-    // Page 2
-    $P1FirstName = test_input($_POST["P1FirstName"]);
-    $P2FirstName = test_input($_POST["P2FirstName"]);
-    $P1LastName = test_input($_POST["P1LastName"]);
-    $P2LastName = test_input($_POST["P2LastName"]);
-    $P1Address = test_input($_POST["P1Address"]);
-    $P2Address = test_input($_POST["P2Address"]);
-    $P1Mobile = test_input($_POST["P1Mobile"]);
-    $P2Mobile = test_input($_POST["P2Mobile"]);
-    $P1Work = test_input($_POST["P1Work"]);
-    $P2Work = test_input($_POST["P2Work"]);
-    $P1Home = test_input($_POST["P1Home"]);
-    $P2Home = test_input($_POST["P2Home"]);
-
-
-    // Page 3
-    $Sub1 = test_input($_POST["Sub1"]);
-    $Sub2 = test_input($_POST["Sub2"]);
-    $Sub3 = test_input($_POST["Sub3"]);
-    $Sub4 = test_input($_POST["Sub4"]);
-    $Sub5 = test_input($_POST["Sub5"]);
-    $Sub6 = test_input($_POST["Sub6"]);
-    $Sub7 = test_input($_POST["Sub7"]);
-    $Sub8 = test_input($_POST["Sub8"]);
 
     // Insert into Student Info Table
-    $queryStuInfo = "INSERT INTO `Student_Info` (`First_Name`, `Last_Name`, `Grade`, `PC_Class`, `Student_Number`, `DOB`, `House_Team`) 
-      VALUES ('$StuFirstName', '$StuLastName', '$StuYear', '$StuPC', '$StuNumber', '$StuDOB', '$StuHouse');";
+    $queryStuInfo = "INSERT INTO `Attendance` (`Student_Number`, `Term_1`, `Term_2`, `Term_3`, `Term_4`, `Year` ) 
+      VALUES ('$num', '$T1', '$T2', '$T3', '$T4', '$StuYear' );";
     if (mysqli_query($con, $queryStuInfo)) {
       echo "New student added successfully";
     } else {
       echo "Error: " . $queryStuInfo . "<br>" . mysqli_error($con);
     }
-
-    // Insert into Contact Info Table
-    $queryContInfo = "INSERT INTO `Contact_Info` (`First_Name_1`, `First_Name_2`, `Last_Name_1`, `Last_Name_2`, `Student_Number`, `Email`, `Home_Address_1`, `Home_Address_2`, `Home_Phone_1`, `Home_Phone_2`, `Work_Phone_1`, `Work_Phone_2`, `Mobile_Phone_1`, `Mobile_Phone_2`) 
-        VALUES ('$P1FirstName', '$P2FirstName', '$P1LastName', '$P2LastName', '$StuNumber', '$StuEmail', '$P1Address', '$P2Address', '$P1Home',  '$P2Home', '$P1Work', '$P2Work', '$P1Mobile','$P1Mobile' );";
-    if (mysqli_query($con, $queryContInfo)) {
-      echo "Parent Info added successfully";
-    } else {
-      echo "Error: " . $queryContInfo . "<br>" . mysqli_error($con);
-    }
-
-    // Insert into Subject Info Table
-    $querySubInfo = "INSERT INTO `Subjects` (`Student_Number`, `Subject_1`, `Subject_2`, `Subject_3`, `Subject_4`, `Subject_5`, `Subject_6`, `Subject_7`, `Subject_8` ) 
-    VALUES ('$StuNumber', '$Sub1', '$Sub2', '$Sub3', '$Sub4',  '$Sub5', '$Sub6', '$Sub7', '$Sub8' );";
-if (mysqli_query($con, $querySubInfo)) {
-  echo "Parent Info added successfully";
-} else {
-  echo "Error: " . $querySubInfo . "<br>" . mysqli_error($con);
-}
 
   }
 
@@ -246,7 +181,7 @@ if (mysqli_query($con, $querySubInfo)) {
               <div class="u-form-email u-form-group"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="email-883e" class="u-label">Term 3</label>
-                <input type="email" placeholder="Number of Days Absent" value="<?php echo $T3; ?>" name="T3"
+                <input type="text" placeholder="Number of Days Absent" value="<?php echo $T3; ?>" name="T3"
                   class="u-input u-input-rectangle">
               </div>
               <div class="u-form-date u-form-group u-form-partition-factor-3 u-form-group-4"
@@ -268,6 +203,8 @@ if (mysqli_query($con, $querySubInfo)) {
               <div class="u-form-group u-form-group-21"
                 style="text-align:left; padding-top: 0px; padding-right: 0px; padding-bottom:0px; padding-left: 55px;">
                 <input type="submit" value="Submit" name="Submit" class="u-btn u-button-style"
+                  style="background-color: # ;">
+                  <input type="text" value="<?php echo $studentNumber ?>" name="num" class="u-btn u-button-style u-hidden"
                   style="background-color: # ;">
               </div>
 
