@@ -84,11 +84,18 @@
       </nav>
     </div>
   </header>
+
   <h2 style="text-align:center; padding: 50px">Welcome to Protractor Education</h2>
   <img src="images/Classroom.jpg" width="400" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">
-  <div style="margin: 0;
+
+
+  <section class="" id="sec-7bed">
+    <div style="padding: 200px"></div>
+
+  <div style=" padding: 00px 100px;
+  margin: 0;
   position: absolute;
-  top: 65%;
+  top: 30%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);">
@@ -97,12 +104,7 @@
   <a href="Add-Student.php"> 
     <button class="u-btn u-btn-submit u-button-style" type=" button">Add Student</button></a>
   </div>
-
-  <section class="u-clearfix u-section-1" id="sec-7bed">
-    <div class="u-clearfix u-sheet u-sheet-1"></div>
   </section>
-
-
 
   <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3fdc">
     <div class="u-clearfix u-sheet u-sheet-1">
