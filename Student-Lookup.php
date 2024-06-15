@@ -629,6 +629,7 @@
                         aria-labelledby="tab-93fc">
                         <div class="u-container-layout u-valign-top u-container-layout-1">
                             <div class="u-expanded-width u-table u-table-responsive u-table-1">
+                            <h4>Attendance - Days Absent</h4>
                                 <table class="u-table-entity">
                                     <colgroup>
                                         <col width="20%">
@@ -640,38 +641,36 @@
                                     <tbody class="u-table-alt-grey-5 u-table-body">
                                         <tr style="height: 54px;">
                                             <td class="u-table-cell">
-                                                <h4>Attendance</h4>
+                                                <p>Year</p>
                                             </td>
                                             <td class="u-table-cell">Term 1</td>
                                             <td class="u-table-cell">Term 2</td>
                                             <td class="u-table-cell">Term 3</td>
                                             <td class="u-table-cell">Term 4</td>
                                         </tr>
-                                        <tr style="height: 57px;">
-                                            <td class="u-table-cell">Days Absent</td>
-                                            <td class="u-table-cell"><?php
-                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
-                                            while ($row = mysqli_fetch_array($studentInfo)) {
-                                                echo $row['Term_1'];
-                                            } ?></td>
-                                            <td class="u-table-cell"><?php
-                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
-                                            while ($row = mysqli_fetch_array($studentInfo)) {
-                                                echo $row['Term_2'];
-                                            } ?></td>
-                                            <td class="u-table-cell"><?php
-                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
-                                            while ($row = mysqli_fetch_array($studentInfo)) {
-                                                echo $row['Term_3'];
-                                            } ?></td>
-                                            <td class="u-table-cell"><?php
-                                            $studentInfo = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ");
-                                            while ($row = mysqli_fetch_array($studentInfo)) {
-                                                echo $row['Term_4'];
-                                            } ?></td>
-                                        </tr>
+                                        <?php
+                                        $Year = mysqli_query($con, "SELECT * FROM Attendance WHERE Student_Number ='$select2' ORDER BY Year DESC"); // Returns the selected student's attendance for each year ordered by latest year
+                                        // For each year in rows
+                                        while ($yearList = mysqli_fetch_array($Year)) {
 
-                                        </tr>
+                                                echo '<tr style="height: 57px;"><td class="u-table-cell">';
+                                                echo $yearList['Year'];
+                                                echo '<td class="u-table-cell">';
+                                                echo $yearList['Term_1'];
+                                                echo '</td>';
+                                                echo '<td class="u-table-cell">';
+                                                echo $yearList['Term_2'];
+                                                echo '</td>';
+                                                echo '<td class="u-table-cell">';
+                                                echo $yearList['Term_3'];
+                                                echo '</td>';
+                                                echo '<td class="u-table-cell">';
+                                                echo $yearList['Term_4'];
+                                                echo '</td>';
+                                                echo '</tr>';
+                                        }
+                                                echo '</tbody></table>';
+                                             ?>
                                     </tbody>
                                 </table>
                                 <div style="padding: 25px 0px 0px 0px;">

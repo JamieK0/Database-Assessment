@@ -51,7 +51,11 @@
     // Insert into Student Info Table
     $queryStuInfo = "INSERT INTO `Attendance` (`Student_Number`, `Term_1`, `Term_2`, `Term_3`, `Term_4`, `Year` ) 
       VALUES ('$num', '$T1', '$T2', '$T3', '$T4', '$StuYear' );";
-
+    if (mysqli_query($con, $queryStuInfo)) {
+      
+    } else {
+      
+    }
 
   }
 
