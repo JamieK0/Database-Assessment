@@ -62,7 +62,7 @@
     $StuDOB = test_input($_POST["StuDOB"]);
     $StuYear = test_input($_POST["StuYear"]);
     $StuHouse = test_input($_POST["StuHouse"]);
-    $StuPC = test_input($_POST["stuPC"]);
+    $StuPC = test_input($_POST["StuPC"]);
     $StuNumber = test_input($_POST["StuNumber"]);
 
     // Page 2
@@ -94,7 +94,7 @@
     $queryStuInfo = "INSERT INTO `Student_Info` (`First_Name`, `Last_Name`, `Grade`, `PC_Class`, `Student_Number`, `DOB`, `House_Team`) 
       VALUES ('$StuFirstName', '$StuLastName', '$StuYear', '$StuPC', '$StuNumber', '$StuDOB', '$StuHouse');";
     if (mysqli_query($con, $queryStuInfo)) {
-      echo "New student added successfully";
+      
     } else {
       echo "Error: " . $queryStuInfo . "<br>" . mysqli_error($con);
     }
@@ -103,7 +103,7 @@
     $queryContInfo = "INSERT INTO `Contact_Info` (`First_Name_1`, `First_Name_2`, `Last_Name_1`, `Last_Name_2`, `Student_Number`, `Email`, `Home_Address_1`, `Home_Address_2`, `Home_Phone_1`, `Home_Phone_2`, `Work_Phone_1`, `Work_Phone_2`, `Mobile_Phone_1`, `Mobile_Phone_2`) 
         VALUES ('$P1FirstName', '$P2FirstName', '$P1LastName', '$P2LastName', '$StuNumber', '$StuEmail', '$P1Address', '$P2Address', '$P1Home',  '$P2Home', '$P1Work', '$P2Work', '$P1Mobile','$P1Mobile' );";
     if (mysqli_query($con, $queryContInfo)) {
-      echo "Parent Info added successfully";
+      
     } else {
       echo "Error: " . $queryContInfo . "<br>" . mysqli_error($con);
     }
@@ -112,7 +112,7 @@
     $querySubInfo = "INSERT INTO `Subjects` (`Student_Number`, `Subject_1`, `Subject_2`, `Subject_3`, `Subject_4`, `Subject_5`, `Subject_6`, `Subject_7`, `Subject_8` ) 
     VALUES ('$StuNumber', '$Sub1', '$Sub2', '$Sub3', '$Sub4',  '$Sub5', '$Sub6', '$Sub7', '$Sub8' );";
 if (mysqli_query($con, $querySubInfo)) {
-  echo "Parent Info added successfully";
+  
 } else {
   echo "Error: " . $querySubInfo . "<br>" . mysqli_error($con);
 }
