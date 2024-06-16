@@ -178,8 +178,6 @@
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <?php
             $postName = $_POST["name"];
-            echo $postName; //Debug
-            echo "<br>"; //Debug
             $studentInfo = mysqli_query($con, "SELECT * FROM Student_Info WHERE First_Name LIKE '%$postName%' OR Last_Name LIKE '%$postName%' OR Student_Number LIKE '%$postName%' ");
 
             while ($row = mysqli_fetch_array($studentInfo)) {

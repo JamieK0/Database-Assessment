@@ -228,13 +228,13 @@ if (mysqli_query($con, $querySubInfo)) {
               <div class="u-form-group u-form-name u-form-partition-factor-2"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="name-883e" class="u-label">First Name</label>
-                <input type="text" placeholder="Enter First Name of the Student" value="<?php echo $StuFirstName; ?>"
+                <input type="text" placeholder="Student's First Name" value="<?php echo $StuFirstName; ?>"
                   name="StuFirstName" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-group-2"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-acc6" class="u-label">Last Name</label>
-                <input type="text" placeholder="Enter Last name of the Student" value="<?php echo $StuLastName; ?>"
+                <input type="text" placeholder="Student's Last Name" value="<?php echo $StuLastName; ?>"
                   name="StuLastName" class="u-input u-input-rectangle">
               </div>
               <div class="u-form-email u-form-group"
@@ -246,7 +246,7 @@ if (mysqli_query($con, $querySubInfo)) {
               <div class="u-form-date u-form-group u-form-partition-factor-3 u-form-group-4"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="date-a19e" class="u-label">Date of Birth</label>
-                <input type="text" placeholder="MM/DD/YYYY" name="StuDOB" value="<?php echo $StuDOB; ?>"
+                <input type="text" placeholder="YYYY/MM/DD" name="StuDOB" value="<?php echo $StuDOB; ?>"
                   class="u-input u-input-rectangle" required="" data-date-format="yyyy/mm/dd">
               </div>
               <div
@@ -280,13 +280,13 @@ if (mysqli_query($con, $querySubInfo)) {
               <div class="u-form-group u-form-partition-factor-2 u-form-group-7"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-d46f" class="u-label">PC Class</label>
-                <input type="text" placeholder="" value="<?php echo $StuPC; ?>" name="StuPC"
+                <input type="text" placeholder="PC Class Name" value="<?php echo $StuPC; ?>" name="StuPC"
                   class="u-input u-input-rectangle">
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-group-8"
                 style="text-align:left; padding-top: 10px; padding-right: 20px; padding-bottom: 10px;">
                 <label for="text-9a7c" class="u-label">Student Number</label>
-                <input type="text" placeholder="" value="<?php echo $StuNumber; ?>" name="StuNumber"
+                <input type="text" placeholder="8 Digit Student Number" value="<?php echo $StuNumber; ?>" name="StuNumber"
                   class="u-input u-input-rectangle">
               </div>
             </div>
